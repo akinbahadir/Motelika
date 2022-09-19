@@ -1,0 +1,189 @@
+﻿@page
+@model Motelika.Pages.SignUpModel
+@{
+}
+
+<body ng-controller="Signup_Controller" class="backgrounded pace-running ng-scope" otelika-ready="">
+    <div class="pace pace-active">
+        <div class="pace-progress" style="width: 99.8589%;" data-progress-text="99%" data-progress="99">
+            <div class="pace-progress-inner"></div>
+        </div>
+        <div class="pace-activity"></div>
+    </div>
+    <div id="signup_page">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 text-center">
+                <div id="signup_progress"></div>
+                <a href="https://kant.ist" target="_blank">
+                    <img alt="Kant Logo" id="kant_logo" src="https://kant.ist/assets/images/logo/kant-black.svg">
+                </a>
+            </div>
+        </div>
+        <div id="signup_content">
+            <form id="signup_form" method="post" name="signupForm" novalidate="" autocomplete="off" ng-submit="signupForm.$valid &amp;&amp; Signup()" class="ng-pristine ng-valid ng-valid-email ng-valid-maxlength">
+                <div class="row">
+                    <div class="col-md-4" id="signup_sidebar_wrapper">
+                    </div>
+                    <div class="col-md-8 form-area">
+                        <div class="language-button ng-hide" ng-hide="lang.code != 'en'" ng-click="ChangeLanguage('tr')" role="button" tabindex="0" aria-hidden="true">TR</div>
+                        <div class="language-button" ng-hide="lang.code != 'tr'" ng-click="ChangeLanguage('en')" role="button" tabindex="0" aria-hidden="false" style="">EN</div>
+                        <div class="row" style="position: absolute;top: -9px;width: 90%;">
+                            <a href="https://otelika.com/" class="smooth"><img alt="Otelika Logo" id="signup_logo" src="https://otelika.com//assets/images/logo/otelika-green.png" style="width: 10%"></a>
+                        </div>
+                        <input autocomplete="false" type="password" style="display: none" data-parsley-id="1976"><ul class="parsley-errors-list" id="parsley-id-1976"></ul>
+                        <div class="row form-area">
+                            <div class="col-lg-8 col-md-12 col-xs-12" id="signup_form_content">
+                                <div class="row">
+                                    <div class="col-sm-6 signup-input-left tooltip-top">
+                                        <md-input-container class="md-block">
+                                            <label class="ng-binding" for="input_0">Adınız</label>
+                                            <input class="signup-field ng-pristine ng-untouched ng-valid md-input ng-empty" data-parsley-errors-messages-disabled="" data-parsley-minlength="1" data-parsley-minlength-message="Lütfen geçerli bir isim giriniz (1-32)" data-parsley-maxlength="32" data-parsley-maxlength-message="Lütfen geçerli bir isim giriniz (1-32)" data-parsley-required="true" data-parsley-required-message="Lütfen geçerli bir isim giriniz (1-32)" data-parsley-trigger="change" data-trigger="focus" name="firstname" type="text" value="" ng-model="signup.firstname" ng-change="autoSave('firstname', signup.firstname)" data-original-title="" title="" data-parsley-id="0702" id="input_0" aria-invalid="false"><div class="md-errors-spacer"></div><ul class="parsley-errors-list" id="parsley-id-0702"></ul>
+                                        </md-input-container>
+                                    </div>
+                                    <div class="col-sm-6 signup-input-right">
+                                        <md-input-container class="md-block">
+                                            <label class="ng-binding" for="input_1">Soyadınız</label>
+                                            <input class="signup-field ng-pristine ng-untouched ng-valid md-input ng-empty" data-parsley-errors-messages-disabled="" data-parsley-minlength="1" data-parsley-minlength-message="Lütfen geçerli bir soyisim giriniz (1-32)" data-parsley-maxlength="32" data-parsley-maxlength-message="Lütfen geçerli bir soyisim giriniz (1-32)" data-parsley-required="true" data-parsley-required-message="Lütfen geçerli bir soyisim giriniz (1-32)" data-parsley-trigger="change" data-trigger="focus" name="lastname" type="text" value="" ng-model="signup.lastname" ng-change="autoSave('lastname', signup.lastname)" data-original-title="" title="" data-parsley-id="3195" id="input_1" aria-invalid="false"><div class="md-errors-spacer"></div><ul class="parsley-errors-list" id="parsley-id-3195"></ul>
+                                        </md-input-container>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6 signup-input-left tooltip-top">
+                                        <md-input-container class="md-block">
+                                            <label class="ng-binding" for="signup_email_field">E-Posta Adresi</label>
+                                            <input class="signup-field ng-pristine ng-untouched ng-valid md-input ng-empty ng-valid-email" data-parsley-errors-messages-disabled="" data-parsley-required="true" data-parsley-required-message="Lütfen e-posta adresinizi giriniz" data-parsley-trigger="change" data-parsley-type="email" data-parsley-type-message="Lütfen geçerli bir e-posta adresi giriniz" data-trigger="focus" id="signup_email_field" name="email" type="email" value="" ng-model="signup.email" ng-change="autoSave('email', signup.email)" data-original-title="" title="" data-parsley-id="4878" aria-invalid="false"><div class="md-errors-spacer"></div><ul class="parsley-errors-list" id="parsley-id-4878"></ul>
+                                        </md-input-container>
+                                    </div>
+                                    <div class="col-sm-6 signup-input-right">
+                                        <md-input-container class="md-block">
+                                            <label class="ng-binding" for="phone_number">Telefon</label>
+                                            <input class="signup-field ng-pristine ng-untouched ng-valid md-input ng-empty ng-valid-maxlength" data-parsley-errors-messages-disabled="" data-parsley-required="true" data-parsley-required-message="Lütfen geçerli bir telefon numarası giriniz" data-parsley-pattern="^\(\d{3}) \d{3}-\d{4}$" data-parsley-pattern-message="Lütfen (XXX) XXX-XXXX formatına uygun bir telefon numarası giriniz, ör. (850) 885-0535" data-parsley-trigger="change" data-trigger="focus" id="phone_number" maxlength="14" name="phone" type="tel" value="" ng-model="signup.phone" ng-change="autoSave('phone', signup.phone)" data-original-title="" title="" data-parsley-id="5531" aria-invalid="false"><div class="md-errors-spacer"></div><ul class="parsley-errors-list" id="parsley-id-5531"></ul>
+                                        </md-input-container>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6 signup-input-left tooltip-top">
+                                        <md-input-container class="md-block">
+                                            <label class="ng-binding" for="signup_password_field">Parola</label>
+                                            <input class="signup-field ng-pristine ng-untouched ng-valid md-input ng-empty" data-parsley-errors-messages-disabled="" data-parsley-minlength="4" data-parsley-minlength-message="Parolanız en az 4 karakter en fazla 20 karakter olabilir" data-parsley-maxlength="20" data-parsley-maxlength-message="Parolanız en az 4 karakter en fazla 20 karakter olabilir" data-parsley-required="true" data-parsley-required-message="Lütfen geçerli bir parola giriniz (4-20)" data-parsley-trigger="focus" data-trigger="focus" autocomplete="false" id="signup_password_field" name="password" type="password" ng-model="signup.password" data-original-title="" title="" data-parsley-id="2146" aria-invalid="false"><div class="md-errors-spacer"></div><ul class="parsley-errors-list" id="parsley-id-2146"></ul>
+                                        </md-input-container>
+                                    </div>
+                                    <div class="col-sm-6 signup-input-right">
+                                        <md-input-container class="md-block">
+                                            <label class="ng-binding" for="signup_confirm_password_field">Parola (onay)</label>
+                                            <input class="signup-field ng-pristine ng-untouched ng-valid md-input ng-empty" data-parsley-errors-messages-disabled="" data-parsley-minlength="4" data-parsley-minlength-message="Parolanız en az 4 karakter en fazla 20 karakter olabilir" data-parsley-maxlength="20" data-parsley-maxlength-message="Parolanız en az 4 karakter en fazla 20 karakter olabilir" data-parsley-required="true" data-parsley-required-message="Lütfen geçerli bir parola giriniz (4-20)" data-parsley-trigger="focus" data-parsley-equalto="#signup_password_field" data-parsley-equalto-message="Parolalar uyuşmuyor" data-trigger="focus" autocomplete="false" id="signup_confirm_password_field" name="confirm" type="password" ng-model="signup.confirm" data-original-title="" title="" data-parsley-id="2985" aria-invalid="false"><div class="md-errors-spacer"></div><ul class="parsley-errors-list" id="parsley-id-2985"></ul>
+                                        </md-input-container>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 tooltip-top">
+                                        <md-input-container class="md-block">
+                                            <label class="ng-binding" for="input_2">Otelinizin Adı</label>
+                                            <input class="signup-field ng-pristine ng-untouched ng-valid md-input ng-empty" data-parsley-errors-messages-disabled="" data-parsley-minlength="2" data-parsley-minlength-message="Lütfen otelinizin adını giriniz (2-32)" data-parsley-maxlength="32" data-parsley-maxlength-message="Lütfen otelinizin adını giriniz (2-32)" data-parsley-required="true" data-parsley-required-message="Lütfen otelinizin adını giriniz (2-32)" data-parsley-trigger="change" data-trigger="focus" name="hotel" type="text" value="" ng-model="signup.hotel" ng-change="autoSave('hotel', signup.hotel)" data-original-title="" title="" data-parsley-id="1267" id="input_2" aria-invalid="false"><div class="md-errors-spacer"></div><ul class="parsley-errors-list" id="parsley-id-1267"></ul>
+                                        </md-input-container>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 tooltip-top">
+                                        <md-input-container class="md-block">
+                                            <label class="ng-binding" for="subdomain">Alt Alan Adı</label>
+                                            <input class="signup-field ng-pristine ng-untouched ng-valid md-input ng-empty" data-parsley-errors-messages-disabled="" data-parsley-trigger="change" data-trigger="focus" name="subdomain" id="subdomain" type="text" value="" ng-change="editSubdomain()" ng-model="signup.subdomain" data-original-title="" title="" data-parsley-id="7276" aria-invalid="false"><div class="md-errors-spacer"></div><ul class="parsley-errors-list" id="parsley-id-7276"></ul>
+                                            <span ng-show="signup.subdomain" id="subdomain_suffix" aria-hidden="true" class="ng-hide">.otelika.com</span>
+                                            <!-- ngIf: validate.message && signup.subdomain -->
+                                        </md-input-container>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12 col-xs-12 lg-p-0 md-p-50">
+                                <div class="card-area col-xs-12 xs-p-0 xs-mb-20">
+                                    <div class="col-xs-12 xs-p-20 xs-pb-10">
+                                        <div class="sidebar-text-cell table-cell-vmid">
+                                            <p class="ng-binding">Kart Detayları</p>
+                                        </div>
+                                    </div>
+                                    <div class="card-height col-sm-12 hidden-md hidden-sm hidden-xs"></div>
+                                    <div class="card-height card-detail-area col-sm-12 hidden-md hidden-sm hidden-xs">
+                                        <p class="card-number-first ng-binding" ng-bind="card_number |&nbsp;limitTo:9"></p>
+                                        <p class="card-number-first" ng-hide="card_number" aria-hidden="false">•••• ••••</p>
+
+
+                                        <p class="card-number-second ng-binding" ng-bind="card_number | limitTo:10:9"></p>
+                                        <p class="card-number-second" ng-hide="card_number" aria-hidden="false">•••• ••••</p>
+
+                                        <p class="card-holder ng-binding" ng-bind="signup.card.holder_name"></p>
+                                        <p class="card-holder" ng-hide="signup.card.holder_name" aria-hidden="false">Immanuel Kant</p>
+
+                                        <p class="card-expire-cvc ng-binding ng-hide" ng-show="signup.card.expire_month || signup.card.expire_year || signup.card.cvc" ng-bind="signup.card.expire_month +'/'+ signup.card.expire_year +' '+ signup.card.cvc" aria-hidden="true">/ </p>
+                                        <p class="card-expire-cvc" ng-hide="signup.card.expire_month || signup.card.expire_year || signup.card.cvc" aria-hidden="false">12/29 •••</p>
+
+                                        <div class="card-family-image card-image">
+                                            <img ng-show="card_details.family_image" aria-hidden="true" class="ng-hide">
+                                            <!-- ngIf: !card_details.family_image && card_details.card_family_name -->
+                                            <img ng-hide="card_details.family_image || card_details.card_family_name" src="https://app.otelika.com/common/image/credit-cards/maximum.png" aria-hidden="false" class="">
+                                        </div>
+                                        <div class="card-association-image card-image">
+                                            <img ng-show="card_details.association_image" aria-hidden="true" class="ng-hide">
+                                            <img ng-hide="card_details.association_image" src="https://app.otelika.com/common/image/credit-cards/mastercard.png" aria-hidden="false" class="">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 md-pl-20 md-pr-20 md-pt-15">
+                                        <md-input-container class="md-block">
+                                            <label class="ng-binding" for="card_number">Kart Numarası</label>
+                                            <input class="signup-field ng-pristine ng-untouched ng-valid md-input ng-empty ng-valid-maxlength" data-parsley-errors-messages-disabled="" data-parsley-required="true" data-parsley-required-message="Lütfen formata uygun bir kart numarası giriniz" data-parsley-trigger="change" data-trigger="focus" id="card_number" maxlength="16" name="card_number" type="text" value="" ng-keyup="editCardNumber()" ng-model="signup.card.number" data-original-title="" title="" data-parsley-id="0113" aria-invalid="false"><div class="md-errors-spacer"></div><ul class="parsley-errors-list" id="parsley-id-0113"></ul>
+                                        </md-input-container>
+                                    </div>
+                                    <div class="col-xs-12 md-pl-20 md-pr-20">
+                                        <md-input-container class="md-block">
+                                            <label class="ng-binding" for="input_3">Kartın Üzerindeki İsim</label>
+                                            <input data-parsley-errors-messages-disabled="" data-parsley-required="true" data-parsley-required-message="Lüften kart üzerinde yazan isim ve soyisim giriniz" data-parsley-trigger="change" data-trigger="focus" class="signup-field ng-pristine ng-untouched ng-valid md-input ng-empty" name="number" ng-model="signup.card.holder_name" data-original-title="" title="" data-parsley-id="3834" id="input_3" aria-invalid="false"><div class="md-errors-spacer"></div><ul class="parsley-errors-list" id="parsley-id-3834"></ul>
+                                        </md-input-container>
+                                    </div>
+                                    <div class="col-xs-4 md-pl-20 xs-pr-0">
+                                        <md-input-container class="md-block">
+                                            <label class="ng-binding" for="card_number">Ay</label>
+                                            <input class="signup-field ng-pristine ng-untouched ng-valid md-input ng-empty ng-valid-maxlength" data-parsley-errors-messages-disabled="" data-parsley-minlength="2" data-parsley-minlength-message="Lütfen kartın ön yüzünde yazan geçerli bir son kullanma tarihi giriniz" data-parsley-required="true" data-parsley-required-message="Lütfen kartın ön yüzünde yazan geçerli bir son kullanma tarihi giriniz" data-parsley-pattern="/^(0[1-9]|1[012])$/" data-parsley-pattern-message="Lütfen kartın ön yüzünde yazan geçerli bir son kullanma tarihi giriniz" data-parsley-trigger="change" data-trigger="focus" id="card_number" maxlength="2" name="expire_month" type="text" value="" ng-model="signup.card.expire_month" data-original-title="" title="" data-parsley-id="6987" aria-invalid="false"><div class="md-errors-spacer"></div><ul class="parsley-errors-list" id="parsley-id-6987"></ul>
+                                        </md-input-container>
+                                    </div>
+                                    <div class="col-xs-4 md-pr-10 xs-pl-0">
+                                        <md-input-container class="md-block">
+                                            <label class="ng-binding" for="card_number">Yıl</label>
+                                            <input class="signup-field ng-pristine ng-untouched ng-valid md-input ng-empty ng-valid-maxlength" data-parsley-errors-messages-disabled="" data-parsley-type="digits" data-parsley-minlength="2" data-parsley-minlength-message="Lütfen kartın ön yüzünde yazan geçerli bir son kullanma tarihi giriniz" data-parsley-min-message="Lütfen kartın ön yüzünde yazan geçerli bir son kullanma tarihi giriniz" data-parsley-required="true" data-parsley-required-message="Lütfen kartın ön yüzünde yazan geçerli bir son kullanma tarihi giriniz" data-parsley-trigger="change" data-trigger="focus" id="card_number" maxlength="2" min="22" name="expire_year" type="text" value="" ng-model="signup.card.expire_year" data-original-title="" title="" data-parsley-id="1321" aria-invalid="false"><div class="md-errors-spacer"></div><ul class="parsley-errors-list" id="parsley-id-1321"></ul>
+                                        </md-input-container>
+                                    </div>
+                                    <div class="col-xs-4 xs-pl-10 md-pr-20">
+                                        <md-input-container class="md-block">
+                                            <label class="ng-binding" for="card_number">CVC</label>
+                                            <input class="signup-field ng-pristine ng-untouched ng-valid md-input ng-empty ng-valid-maxlength" data-parsley-errors-messages-disabled="" data-parsley-minlength="3" data-parsley-minlength-message="Lütfen kartın arka yüzünde bulunan rakamları giriniz" data-parsley-required="true" data-parsley-required-message="Lütfen kartın arka yüzünde bulunan rakamları giriniz" data-parsley-trigger="change" data-trigger="focus" id="card_number" maxlength="3" name="cvc" type="text" value="" ng-model="signup.card.cvc" data-original-title="" title="" data-parsley-id="7231" aria-invalid="false"><div class="md-errors-spacer"></div><ul class="parsley-errors-list" id="parsley-id-7231"></ul>
+                                        </md-input-container>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 col-md-12 col-xs-12">
+                                <div class="row form-area md-pl-30 md-pr-30 xs-p-0">
+                                    <div class="col-sm-12 xs-pb-10 ng-binding" ng-bind-html="lang.text_contract_confirm | trustAsHtml">Otelika Kurulumuna başlayarak <a href="https://otelika.com/kullanici-sozlesmesi" target="_blank" class="forgotten-link">Kullanıcı Sözleşmesi</a>'ni kabul etmiş oluyorsunuz.</div>
+                                    <div class="col-sm-12">
+                                        <button class="btn btn-lg btn-default signup-continue text-uppercase ng-binding" ng-disabled="disable_buttons" type="submit" ng-bind="lang.signup">Kayıt Ol</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" id="signup_footer_content">
+                                <hr class="signup-footer-hr">
+                                <div class="signup-footer-content-padding ng-binding">
+                                    Otelika'ya kaydolarak, Otelika Gizlilik ve Kişisel Veri Politikasını okuduğunuzu, Otelika'yı işletmeniz aracılığıyla kullanacak ziyaretçi ve müşterilerinizi bu politikadan haberdar edeceğinizi ve Kant Gizlilik ve Kişisel Veri Politikasını talep etmeleri halinde onlara ileteceğinizi, Kant ile paylaştığınız, müşteri ve ziyaretçilerinizin verilerinin müşteri ve ziyaretçilerinizin onayı dahilinde veri sorumlusunun sorumluluğunda paylaşıldığını kabul etmiş sayılmaktasınız.
+                                    <br><br>
+                                    <a href="https://otelika.com//gizlilik-ve-kisisel-veri-politikasi" target="_blank" rel="noreferrer" class="ng-binding">Gizlilik ve Kişisel Veri Politikası</a>
+                                    <a href="https://otelika.com//kullanici-sozlesmesi" target="_blank" rel="noreferrer" class="ng-binding">Kullanıcı Sözleşmesi</a>
+                                    <a href="https://otelika.com//destek" target="_blank" rel="noreferrer" class="ng-binding">Destek</a>
+                                    <br><br>
+                                    © 2022 Otelika. Tüm hakları saklıdır.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
