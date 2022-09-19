@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Motelika.Pages
 {
-    public class AdvantageModel : PageModel
+    public class AdvantagesModel : PageModel
     {
         public void OnGet()
         {

@@ -15,10 +15,4 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Pages\Advantages - Copy.cshtml.cs">
-      <DependentUpon>Advantages.cshtml.cs</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
 </Project>
