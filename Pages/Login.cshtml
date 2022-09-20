@@ -3,29 +3,12 @@
 @{
 }
 
-<body ng-controller="Login_Controller" class="backgrounded pace-running ng-scope" otelika-ready="">
-    <div class="pace pace-active">
-        <div class="pace-progress" style="width: 99.3269%;" data-progress-text="99%" data-progress="99">
-            <div class="pace-progress-inner"></div>
-        </div>
-        <div class="pace-activity"></div>
-    </div>
+<body>
     <div id="signup_page">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1 text-center">
-                <div id="signup_progress"></div>
-                <a href="https://kant.ist" target="_blank">
-                </a>
-            </div>
-        </div>
         <div id="signup_content">
             <form id="signup_form" method="post" name="loginForm" novalidate="" ng-submit="loginForm.$valid &amp;&amp; Login()" class="ng-pristine ng-valid ng-valid-email">
                 <div class="row">
-                    <div class="col-md-6" id="signup_sidebar_wrapper">
-                    </div>
-                    <div class="col-md-6 form-area">
-                        <div class="language-button ng-hide" ng-hide="lang.code != 'en'" ng-click="ChangeLanguage('tr')" role="button" tabindex="0" aria-hidden="true">TR</div>
-                        <div class="language-button" ng-hide="lang.code != 'tr'" ng-click="ChangeLanguage('en')" role="button" tabindex="0" aria-hidden="false" style="">EN</div>
+                    <div class="col-md-1 form-area">
                         <div class="row">
                         </div>
                         <div class="row form-area">
@@ -33,7 +16,7 @@
                                 <div class="row">
                                     <div class="col-sm-12 tooltip-top">
                                         <md-input-container class="md-block">
-                                            <label class="ng-binding" for="signup_email_field">E-Posta Adresi</label>
+                                            <label class="ng-binding" for="signup_email_field">E-Mail Address</label>
                                             <input class="signup-field ng-pristine ng-untouched ng-valid md-input ng-empty ng-valid-email" data-parsley-errors-messages-disabled="" data-parsley-required="true" data-parsley-required-message="Lütfen e-posta adresinizi giriniz" data-parsley-trigger="change" data-parsley-type="email" data-parsley-type-message="Lütfen geçerli bir e-posta adresi giriniz" data-trigger="focus" id="signup_email_field" name="email" type="email" value="" ng-model="email" data-original-title="" title="" data-parsley-id="0941" aria-invalid="false"><div class="md-errors-spacer"></div><ul class="parsley-errors-list" id="parsley-id-0941"></ul>
                                         </md-input-container>
                                     </div>
@@ -41,32 +24,31 @@
                                 <div class="row md-pb-0">
                                     <div class="col-sm-12 tooltip-top">
                                         <md-input-container class="md-block">
-                                            <label class="ng-binding" for="signup_password_field">Parola</label>
+                                            <label class="ng-binding" for="signup_password_field">Password</label>
                                             <input class="signup-field ng-pristine ng-untouched ng-valid md-input ng-empty" data-parsley-errors-messages-disabled="" data-parsley-required="true" data-parsley-required-message="Lütfen parolanızı giriniz" data-parsley-trigger="chage" data-trigger="focus" id="signup_password_field" name="password" type="password" ng-model="password" data-original-title="" title="" data-parsley-id="2406" aria-invalid="false"><div class="md-errors-spacer"></div><ul class="parsley-errors-list" id="parsley-id-2406"></ul>
                                         </md-input-container>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <button class="btn btn-success">Log In</button>
+                                    </div>
+                                </div>
+                                <br />
                                 <div class="row md-pt-0">
                                     <div class="col-sm-12">
                                         <div class="sidebar-text-cell table-cell-vmid">
-                                            <a href="https://otelika.com/login/forgotten" class="forgotten-link ng-binding smooth" ng-bind="lang.text_forgotten">Parolanı mı unuttun?</a>
+                                            <button class="btn-sm btn-info">Forgot your password?</button>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <button class="btn btn-lg btn-default signup-continue text-uppercase ng-binding" ng-disabled="disable_buttons" type="submit" ng-bind="lang.login">Giriş Yap</button>
-                                    </div>
+                                <br />
+                                <div class="row col-sm-12">
+                                    Don't have an account?
                                 </div>
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="sidebar-tooltip text-center">
-                                            <div class="sidebar-text-cell table-cell-vmid">
-                                                <span ng-bind="lang.text_not_regitered" class="ng-binding">Kayıtlı değil misin?</span>
-                                                <a href="https://otelika.com//signup/" class="login-link ng-binding smooth" ng-bind="lang.signup">Kayıt Ol</a>.
-                                            </div>
-                                        </div>
-                                    </div>
+                                <br />
+                                <div >
+                                    <a asp-page="./SignUp/" class="btn btn-warning">Sign Up</a>
                                 </div>
                             </div>
                         </div>
@@ -75,5 +57,4 @@
             </form>
         </div>
     </div>
-    @*<a href="https://otelika.com/" class="smooth"><img alt="Otelika Logo" id="signup_logo" src="https://otelika.com//assets/images/logo/otelika-green.png" style="width: 20%"></a>*@
 </body>

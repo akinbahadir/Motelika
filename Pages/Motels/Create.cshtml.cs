@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -10,6 +11,7 @@ using Motelika.Model;
 
 namespace Motelika.Pages.Motels
 {
+    //[Authorize]
     public class CreateModel : PageModel
     {
         private readonly Motelika.Data.MotelikaContext _context;
@@ -18,7 +20,6 @@ namespace Motelika.Pages.Motels
         {
             _context = context;
         }
-
         public IActionResult OnGet()
         {
             return Page();
